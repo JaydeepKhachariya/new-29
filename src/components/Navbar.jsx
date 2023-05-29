@@ -5,11 +5,12 @@ import { FaGlobe, FaUser } from "react-icons/fa";
 import { IoBook } from "react-icons/io5";
 import { RiCustomerServiceFill } from "react-icons/ri";
 import { MdLocalMovies } from "react-icons/md";
+import Logo from "../assets/images/logo.png";
 
 const Navbar = () => {
   return (
     <>
-      <nav className="bg-black w-[70px] flex flex-col items-center p-4 justify-around h-[90vh] m-8 rounded-lg absolute">
+      <nav className="bg-black w-[70px] flex flex-col items-center p-4 justify-around h-[70vh] top-16 m-8 rounded-lg absolute">
         <NavLink to="/">
           <div className="flex items-center justify-center text-[45px] w-[50px] h-[50px]  text-white rounded-md">
             <HiHome />
@@ -28,7 +29,7 @@ const Navbar = () => {
           </div>
         </NavLink>
 
-        <NavLink to="about">
+        <NavLink to="blog">
           <div className="flex items-center justify-center text-[35px] w-[50px] h-[50px]  text-white rounded-md">
             <IoBook />
           </div>
@@ -40,11 +41,17 @@ const Navbar = () => {
           </div>
         </NavLink>
       </nav>
-      <div className="absolute right-[32px] top-[32px] text-[34px]">
+      {/* <p className="ml-[150px] mt-[32px] inline-block">{}</p> */}
+      <div className="absolute top-[32px] left-12 text-[34px]">
         <FaUser />
       </div>
-      <div className="absolute right-[32px] bottom-[32px] whitespace-nowrap bg-lime-400 py-3 px-4 rounded-md font-bold text-white">
-        <button>BOOK NOW</button>
+      <div className="absolute top-[32px] right-[32px] text-[34px]">
+        <img src={Logo} width={150} height={150} alt="" />
+      </div>
+      <div className=" absolute bottom-[32px] right-[32px]">
+        <button className=" whitespace-nowrap bg-lime-400 py-3 px-4 rounded-md font-bold text-white">
+          BOOK NOW
+        </button>
       </div>
     </>
   );

@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import Plans from "./pages/Plans";
-import About from "./pages/About";
+import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route index path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/plans" element={<Plans />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </>
