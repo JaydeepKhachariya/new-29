@@ -10,7 +10,7 @@ import Logo from "../assets/images/logo.png";
 const Navbar = () => {
   return (
     <>
-      <nav className="bg-black w-[70px] flex flex-col items-center p-4 justify-around h-[70vh] top-16 m-8 rounded-lg absolute">
+      <nav className="bg-[#000] backdrop-blur-lg w-[70px] flex flex-col items-center p-4 justify-around h-auto top-0 bottom-0 m-8 rounded-lg fixed">
         <NavLink to="/">
           <div className="flex items-center justify-center text-[45px] w-[50px] h-[50px]  text-white rounded-md">
             <HiHome />
@@ -42,7 +42,7 @@ const Navbar = () => {
         </NavLink>
       </nav>
       {/* <p className="ml-[150px] mt-[32px] inline-block">{}</p> */}
-      <div className="absolute top-[32px] left-12 text-[34px]">
+      <div className="absolute top-[32px] left-32 text-[34px]">
         <FaUser />
       </div>
       <div className="absolute top-[32px] right-[32px] text-[34px]">
