@@ -13,6 +13,8 @@
   color: black;
 }
 
-.font-seoge {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+.bgCrousal {
+  background-image: url("./assets/images/crousalBG.jpg");
+  background-position: center;
+  background-size: cover;
 }

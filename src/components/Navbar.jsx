@@ -10,7 +10,7 @@ import Logo from "../assets/images/logo.png";
 const Navbar = () => {
   return (
     <>
-      <nav className="bg-[#000] backdrop-blur-lg w-[70px] flex flex-col items-center p-4 justify-around h-auto top-0 bottom-0 m-8 rounded-lg fixed">
+      <nav className="bg-[#0000008a] backdrop-blur-md w-[70px] flex flex-col items-center p-4 justify-around h-auto top-0 bottom-0 m-8 rounded-lg fixed">
         <NavLink to="/">
           <div className="flex items-center justify-center text-[45px] w-[50px] h-[50px]  text-white rounded-md">
             <HiHome />
