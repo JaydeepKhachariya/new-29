@@ -14,7 +14,13 @@
 }
 
 .bgCrousal {
-  background-image: url("./assets/images/crousalBG.jpg");
+  background-image: url("./assets/images/bgcrousal.png");
   background-position: center;
   background-size: cover;
+  object-fit: cover;
 }
+
+/* .mySwiper {
+  position: absolute !important;
+  top: 0 !important;
+} */
