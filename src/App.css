@@ -24,3 +24,26 @@
   position: absolute !important;
   top: 0 !important;
 } */
+
+.block-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-gap: 10px; */
+  max-width: 400px;
+  margin: 0 auto;
+  top: 25%;
+  position: relative;
+}
+
+.block {
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .block-grid {
+    transform: scale(0.6);
+  }
+}

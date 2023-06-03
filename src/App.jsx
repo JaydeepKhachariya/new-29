@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Explore from "./pages/Explore";
-import Plans from "./pages/Plans";
+import Bookings from "./pages/Bookings";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/plans" element={<Plans />} />
+        <Route path="/bookings" element={<Bookings />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
