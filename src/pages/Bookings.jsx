@@ -112,14 +112,12 @@ const Bookings = () => {
     <div className=" h-[100vh]">
       <div className="block-grid">
         {blockImages.map((image, index) => (
-          <Link to="/blog">
-            <div
-              key={index}
-              className="block"
-              style={{ backgroundImage: `url(${image})` }}
-              onClick={() => handleBlockClick(index)}
-            ></div>
-          </Link>
+          <div
+            key={index}
+            className="block"
+            style={{ backgroundImage: `url(${image})` }}
+            onClick={() => handleBlockClick(index)}
+          ></div>
         ))}
       </div>
     </div>
