@@ -29,9 +29,15 @@ const Navbar = () => {
           </div>
         </NavLink>
 
-        <NavLink to="/blog">
+        <NavLink to="/plan">
           <div className="flex items-center justify-center text-[35px] w-[50px] h-[50px]  text-white rounded-md">
             <IoBook />
+          </div>
+        </NavLink>
+
+        <NavLink to="/blog">
+          <div className="flex items-center justify-center text-[40px] w-[50px] h-[50px]  text-white rounded-md">
+            <RiCustomerServiceFill />
           </div>
         </NavLink>
 
