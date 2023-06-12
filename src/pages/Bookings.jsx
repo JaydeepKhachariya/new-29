@@ -109,7 +109,7 @@ const Bookings = () => {
   };
 
   return (
-    <div className=" h-[100vh]">
+    <div className="bgCrousal2 h-[100vh]">
       <div className="block-grid">
         {blockImages.map((image, index) => (
           <div

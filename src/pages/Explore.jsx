@@ -130,14 +130,14 @@ const Explore = () => {
                 <p className="text-[80px] font-bold text-[#003564]">
                   {el.title}
                 </p>
-                <img src={el.image} alt="" />
+                <img src={el.image} alt="" className="slideImageAnim" />
                 <div className="flex w-[100%] items-center justify-between">
                   <ul>
                     <li className="text-center">
                       <p className="font-bold text-[22px] text-black">
                         WATTAGE
                       </p>
-                      <p className="text-[24px] text-black font-light">
+                      <p className="text-[24px] text-gray-600 font-medium">
                         {el.opation1A}
                       </p>
                     </li>
@@ -148,7 +148,7 @@ const Explore = () => {
                       <p className="font-bold text-[22px] text-black">
                         Temperature
                       </p>
-                      <p className="text-[24px] text-black font-light">
+                      <p className="text-[24px] text-gray-600 font-medium">
                         {el.opation2A}
                       </p>
                     </li>
@@ -157,7 +157,7 @@ const Explore = () => {
                     <li className="text-center">
                       {" "}
                       <p className="font-bold text-[22px] text-black">CRI</p>
-                      <p className="text-[24px] text-black font-light">
+                      <p className="text-[24px] text-gray-600 font-medium">
                         {el.opation3A}
                       </p>
                     </li>
@@ -166,7 +166,7 @@ const Explore = () => {
                     <li className="text-center">
                       {" "}
                       <p className="font-bold text-[22px] text-black">TLCI</p>
-                      <p className="text-[24px] text-black font-light">
+                      <p className="text-[24px] text-gray-600 font-medium">
                         {el.opation4A}
                       </p>
                     </li>
@@ -177,7 +177,7 @@ const Explore = () => {
                       <p className="font-bold text-[22px] text-black">
                         Dimming
                       </p>
-                      <p className="text-[24px] text-black font-light">
+                      <p className="text-[24px] text-gray-600 font-medium">
                         {el.opation5A}
                       </p>
                     </li>
@@ -188,7 +188,7 @@ const Explore = () => {
                       <p className="font-bold text-[22px] text-black">
                         Battery
                       </p>
-                      <p className="text-[24px] text-black font-light">
+                      <p className="text-[24px] text-gray-600 font-medium">
                         {el.opation6A}
                       </p>
                     </li>
@@ -199,7 +199,7 @@ const Explore = () => {
                       <p className="font-bold text-[22px] text-black">
                         Accessory Mount
                       </p>
-                      <p className="text-[24px] text-black font-light">
+                      <p className="text-[24px] text-gray-600 font-medium">
                         {el.opation7A}
                       </p>
                     </li>
