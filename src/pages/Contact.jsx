@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div className="h-[100vh] px-28 ">
       <form className="bg-white contactFormShadow flex flex-col justify-start p-5 gap-6 items-center h-[80%] mt-[5%] w-[80%] ml-[10%] rounded-lg">
-        <h1 className="text-[45px] font-bold">Contct us !</h1>
+        <h1 className="text-[45px] font-bold">Contact us !</h1>
         <div className="flex items-center justify-between w-full gap-3">
           <input
             placeholder="First Name"

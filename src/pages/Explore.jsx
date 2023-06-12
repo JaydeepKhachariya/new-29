@@ -2,7 +2,8 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import { EffectFade } from "swiper";
+import { Navigation } from "swiper";
+import "swiper/css/navigation";
 
 import Picture1 from "../assets/images/Picture1.png";
 import Picture2 from "../assets/images/Picture2.png";
@@ -118,6 +119,10 @@ const Explore = () => {
           <div className="h-[50px] w-[50px] rounded-full bg-black"></div>
         </div> */}
       <Swiper
+        modules={[Navigation]}
+        navigation={true}
+        loop={true}
+        scrollbar={{ draggable: true }}
         speed={600}
         slidesPerView={1}
         // effect={"fade"}
