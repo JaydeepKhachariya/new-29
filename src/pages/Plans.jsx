@@ -4,6 +4,7 @@ import intermediet from "../assets/images/intermediet.png";
 import beginner from "../assets/images/beginner.png";
 import expert from "../assets/images/expert.png";
 import Checkout from "../components/Checkout";
+import "animate.css";
 
 const Plan = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +44,7 @@ const Plan = () => {
       <div className="h-[100%] top-0 relative">
         {isSelected == undefined ? (
           <div className="flex items-center justify-around  h-[100%]">
-            {/* {arr.map((el) => {
+            {arr.map((el) => {
               return (
                 <div
                   key={el.id}
@@ -56,61 +57,13 @@ const Plan = () => {
                     src={el.image}
                     alt="wing plan"
                     className={`wingPlan ${
-                      isClicked ? `slide-right${el.id}` : null
+                      isClicked === el.id ? `slide-right${el.id}` : null
                     }`}
                   />
                   <p className="text-[18px] font-bold">{el.name}</p>
                 </div>
               );
-            })} */}
-            <div
-              className="flex flex-col items-center justify-center p-4 h-[250px] w-[250px]"
-              onClick={() => {
-                handleClick(1);
-              }}
-            >
-              <img
-                src={beginner}
-                alt="wing plan"
-                // onClick={() => setIsClicked(true)}
-                className={`wingPlan ${
-                  isClicked === 1 ? "slide-right1" : null
-                }`}
-              />
-              <p className="text-[18px] font-bold">BEGINNER</p>
-            </div>
-            <div
-              className="flex flex-col items-center justify-center p-4 h-[250px] w-[250px]"
-              onClick={() => {
-                handleClick(2);
-              }}
-            >
-              <img
-                src={intermediet}
-                alt="wing plan"
-                // onClick={() => setIsClicked(true)}
-                className={`wingPlan ${
-                  isClicked === 2 ? "slide-right2" : null
-                }`}
-              />
-              <p className="text-[18px] font-bold">INTERMEDIATE</p>
-            </div>
-            <div
-              className="flex flex-col items-center justify-center p-4 h-[250px] w-[250px]"
-              onClick={() => {
-                handleClick(3);
-              }}
-            >
-              <img
-                src={expert}
-                alt="wing plan"
-                // onClick={() => setIsClicked(true)}
-                className={`wingPlan ${
-                  isClicked === 3 ? "slide-right3" : null
-                }`}
-              />
-              <p className="text-[18px] font-bold">ADVANCED</p>
-            </div>
+            })}
           </div>
         ) : (
           <>
@@ -145,7 +98,17 @@ const Plan = () => {
                 <div className="h-[150px] w-[150px] rounded-full bg-transparent flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
-                      <img src="money.png" alt="" className="w-[100px]" />
+                      <img
+                        src={
+                          isSelected === 1
+                            ? beginner
+                            : isSelected === 2
+                            ? intermediet
+                            : expert
+                        }
+                        alt=""
+                        className="w-[100px] animate__animated animate__slideInLeft animate__faster"
+                      />
                     </div>
                     <div className="flip-card-back">
                       <button>Book now</button>
