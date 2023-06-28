@@ -176,3 +176,7 @@
   transition: transform ease 0.5s;
   transform: translateX(165%);
 }
+
+.cartShadow{
+  box-shadow: #00000038 0 0 25px;
+}
