@@ -13,60 +13,52 @@ const Plan = () => {
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [isSelected, setIsSelected] = useState();
   const [showModel, setShowModel] = useState(false);
+  const [radQuantity,setRadQuantity]=useState(1);
+  const [dadQuantity,setDadQuantity]=useState(1);
+  const [motherQuantity,setMotherQuantity]=useState(1);
+  const [chingariQuantity,setChingariQuantity]=useState(1);
+  const [wabisabiQuantity,setWabisabiQuantity]=useState(1);
+  const [workersQuantity,setWorkersQuantity]=useState(4);
 
-  const arr = [
-    {
-      id: 1,
-      name: "BEGINNER",
-      image: beginner,
-    },
-    {
-      id: 2,
-      name: "INTERMEDIATE",
-      image: intermediet,
-    },
-    {
-      id: 3,
-      name: "ADVANCED",
-      image: expert,
-    },
-  ];
+  
 
   const plans = [
     {
       id: 1,
       name: "Beginner",
       image: beginner,
-      rad: 1,
-      dad: 1,
-      chingari: 1,
-      wabisabi: 1,
-      workers: 4,
-      mother: 1,
+      rad: 200,
+      dad: 200,
+      chingari: 200,
+      wabisabi: 200,
+      workers: 200,
+      mother: 200,
     },
     {
       id: 2,
       name: "Intermediate",
       image: intermediet,
-      rad: 1,
-      dad: 1,
-      chingari: 1,
-      wabisabi: 1,
-      workers: 8,
-      mother: 1,
+      rad: 200,
+      dad: 200,
+      chingari: 200,
+      wabisabi: 200,
+      workers: 200,
+      mother: 200,
     },
     {
       id: 3,
       name: "Advance",
       image: expert,
-      rad: 1,
-      dad: 1,
-      chingari: 1,
-      wabisabi: 1,
-      workers: 16,
-      mother: 1,
+      rad: 200,
+      dad: 200,
+      chingari: 200,
+      wabisabi: 200,
+      workers: 200,
+      mother: 200,
     },
   ];
+
+
 
   const handlePlanClick = (plan) => {
     setSelectedPlan(plan);
@@ -236,32 +228,40 @@ const Plan = () => {
           </div>
 
           <div className="bg-white cartShadow rounded-xl flex flex-col mt-2 gap-4 p-2">
+            <p className="py-1 px-2 text-[22px] font-medium" >{selectedPlan.name}</p>
             <div className="h-[50px] flex items-center w-full bg-[#60a5fa] py-1 px-2 rounded-lg">
               <div className="flex w-full justify-between pr-2 items-center">
                 <div className="flex items-center gap-2">
                   <div className="flex flex-col items-start">
                     <p className="text-[16px] text-white uppercase">DAD</p>
                     <p className=" text-gray-200 text-[14px] ">
-                      Price : ${selectedPlan.dad}
+                      Price : ${selectedPlan.dad*dadQuantity}
                     </p>
                   </div>
                 </div>
-                <p>1X</p>
+                <div className="flex item-center gap-2">
+                  <button className="bg-white h-[30px] rounded-md w-[30px]" onClick={()=>setDadQuantity(dadQuantity+1)} >+</button>
+                <p>{dadQuantity}X</p>
+                  <button className="bg-white h-[30px] rounded-md w-[30px]" onClick={()=>{dadQuantity===1?null:setDadQuantity(dadQuantity-1)}}>-</button>
+                </div>
               </div>
-            </div>
-
+            </div>  
             <div className="h-[50px] flex items-center w-full bg-[#60a5fa] py-1 px-2 rounded-lg">
               <div className="flex w-full justify-between pr-2 items-center">
                 <div className="flex items-center gap-2">
                   <div className="flex flex-col items-start">
                     <p className="text-[16px] text-white uppercase">RAD</p>
                     <p className=" text-gray-200 text-[14px] ">
-                      Price : ${selectedPlan.rad}
+                      Price : ${selectedPlan.rad*radQuantity}
                     </p>
                   </div>
                 </div>
 
-                <p>1X</p>
+                <div className="flex item-center gap-2">
+                  <button className="bg-white h-[30px] rounded-md w-[30px]" onClick={()=>{setRadQuantity(radQuantity+1)}} >+</button>
+                <p>{radQuantity}X</p>
+                  <button className="bg-white h-[30px] rounded-md w-[30px]" onClick={()=>{radQuantity===1?null:setRadQuantity(radQuantity-1)}}>-</button>
+                </div>
               </div>
             </div>
             <div className="h-[50px] flex items-center w-full bg-[#60a5fa] py-1 px-2 rounded-lg">
@@ -270,11 +270,15 @@ const Plan = () => {
                   <div className="flex flex-col items-start">
                     <p className="text-[16px] text-white uppercase">Chingari</p>
                     <p className=" text-gray-200 text-[14px] ">
-                      Price : ${selectedPlan.chingari}
+                      Price : ${selectedPlan.chingari*chingariQuantity}
                     </p>
                   </div>
                 </div>
-                <p>1X</p>
+                <div className="flex item-center gap-2">
+                  <button className="bg-white h-[30px] rounded-md w-[30px]" onClick={()=>{setChingariQuantity(chingariQuantity+1)}}>+</button>
+                <p>{chingariQuantity}X</p>
+                  <button className="bg-white h-[30px] rounded-md w-[30px]" onClick={()=>{chingariQuantity===1?null:setChingariQuantity(chingariQuantity-1)}}>-</button>
+                </div>
               </div>
             </div>
             <div className="h-[50px] flex items-center w-full bg-[#60a5fa] py-1 px-2 rounded-lg">
@@ -283,11 +287,15 @@ const Plan = () => {
                   <div className="flex flex-col items-start">
                     <p className="text-[16px] text-white uppercase">Mother</p>
                     <p className=" text-gray-200 text-[14px] ">
-                      Price : ${selectedPlan.mother}
+                      Price : ${selectedPlan.mother*motherQuantity}
                     </p>
                   </div>
                 </div>
-                <p>1X</p>
+                <div className="flex item-center gap-2">
+                  <button className="bg-white h-[30px] rounded-md w-[30px]" onClick={()=>{setMotherQuantity(motherQuantity+1)}}>+</button>
+                <p>{motherQuantity}X</p>
+                  <button className="bg-white h-[30px] rounded-md w-[30px]" onClick={()=>{ motherQuantity===1?null: setMotherQuantity(motherQuantity-1)}}>-</button>
+                </div>
               </div>
             </div>
             <div className="h-[50px] flex items-center w-full bg-[#60a5fa] py-1 px-2 rounded-lg">
@@ -296,11 +304,15 @@ const Plan = () => {
                   <div className="flex flex-col items-start">
                     <p className="text-[16px] text-white uppercase">Wabisabi</p>
                     <p className=" text-gray-200 text-[14px] ">
-                      Price : ${selectedPlan.wabisabi}
+                      Price : ${selectedPlan.wabisabi*wabisabiQuantity}
                     </p>
                   </div>
                 </div>
-                <p>1X</p>
+                <div className="flex item-center gap-2">
+                  <button className="bg-white h-[30px] rounded-md w-[30px]" onClick={()=>{setWabisabiQuantity(wabisabiQuantity+1)}}>+</button>
+                <p>{wabisabiQuantity}X</p>
+                  <button className="bg-white h-[30px] rounded-md w-[30px]" onClick={()=>{wabisabiQuantity===1?null: setWabisabiQuantity(wabisabiQuantity-1)}}>-</button>
+                </div>
               </div>
             </div>
             <div className="h-[50px] flex items-center w-full bg-[#60a5fa] py-1 px-2 rounded-lg">
@@ -309,13 +321,20 @@ const Plan = () => {
                   <div className="flex flex-col items-start">
                     <p className="text-[16px] text-white uppercase">Workers</p>
                     <p className=" text-gray-200 text-[14px] ">
-                      Price : ${selectedPlan.workers}
+                      Price : ${selectedPlan.workers*workersQuantity}
                     </p>
                   </div>
                 </div>
-                <p>1X</p>
+                <div className="flex item-center gap-2">
+                  <button className="bg-white h-[30px] rounded-md w-[30px]" onClick={()=>{setWorkersQuantity(workersQuantity+1)}}>+</button>
+                <p>{workersQuantity}X</p>
+                  <button className="bg-white h-[30px] rounded-md w-[30px]" onClick={()=>{ workersQuantity===1?null: setWorkersQuantity(workersQuantity-1)}}>-</button>
+                </div>
               </div>
             </div>
+          </div>
+          <div className="bg-white w-full h-[70px] flex items-center justify-start px-4 cartShadow mt-4 rounded-lg">
+            <p className="text-[22px] font-medium">Total: NULL</p>
           </div>
         </div>
       ) : null}
