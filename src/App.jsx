@@ -8,13 +8,14 @@ import Bookings from "./pages/Bookings";
 import Plan from "./pages/Plans";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import Invoice from "./components/Invoice";
 
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
-        <Route index path="/" element={<Home />} />
+        <Route index path="/" element={<Invoice />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/bookings" element={<Bookings />} />
         <Route path="/plan" element={<Plan />} />
