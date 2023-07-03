@@ -13,7 +13,7 @@ import Invoice from "./components/Invoice";
 function App() {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
