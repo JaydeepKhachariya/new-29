@@ -9,6 +9,7 @@ import Plan from "./pages/Plans";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Invoice from "./components/Invoice";
+import "rsuite/dist/rsuite-no-reset.min.css";
 
 function App() {
   return (

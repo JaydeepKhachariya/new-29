@@ -1,8 +1,12 @@
-import React from "react";
-import { MdClose } from "react-icons/md";
+import { useState } from "react";
+import { DateRangePicker } from "rsuite";
 import axios from "axios";
 
 const Checkout = ({ setIsCheckout }) => {
+  const [date, setDate] = useState();
+
+  console.log(date);
+
   const handleCreateOrder = async (e) => {
     e.preventDefault();
 
@@ -48,8 +52,8 @@ const Checkout = ({ setIsCheckout }) => {
   return (
     <>
       <div className="bg-[##000000b5] backdrop-blur-md w-full h-full flex justify-center items-center absolute top-0 left-0 mx-auto">
-        <div className="w-2/4 h-[500px] bg-white rounded-md shadow-md p-4 flex flex-col ite">
-          <form className=" flex flex-col justify-start  gap-6 items-center h-auto w-[80%] ml-[10%] rounded-lg">
+        <div className="w-2/4 h-auto bg-white rounded-md shadow-md p-4 flex flex-col item-center overflow-y-auto">
+          <form className=" flex flex-col justify-start relative gap-6 items-center h-auto w-[80%] ml-[10%] rounded-lg">
             <h1 className="text-[45px] font-bold">Way to checkout</h1>
             <div className="flex items-center justify-between w-full gap-3">
               <input
@@ -61,7 +65,6 @@ const Checkout = ({ setIsCheckout }) => {
                 className="bg-blue-50 w-[49%] px-10 py-6 rounded-md border-blue-100 border outline-none"
               /> */}
             </div>
-
             <div className="flex items-center justify-between w-full gap-3">
               <input
                 placeholder="Location"
@@ -76,9 +79,25 @@ const Checkout = ({ setIsCheckout }) => {
               placeholder="Address"
               className="w-full bg-blue-50 py-6 px-10 rounded-md border-blue-100 border outline-none"
             />
+            {/* <div className="flex items-center justify-center gap-3">
+              <input type="date" name="" id="" />
+              to
+              <input type="date" name="" id="" />
+            </div> */}
+            {/* {dateModel ? (
+              <div className="absolute h-full w-full bg-black flex items-center justify-center">
+                <DateRange
+                  editableDateInputs={true}
+                  onChange={(item) => setDate([item.selection])}
+                  moveRangeOnFirstSelection={false}
+                  ranges={date}
+                />
+              </div>
+            ) : null} */}
+            <DateRangePicker onChange={(e) => setDate(e)} />
             <div className="flex items-center justify-center gap-4 w-full">
               <button
-                onClick={handleCreateOrder}
+                // onClick={handleCreateOrder}
                 className="bg-[#0051b6] w-[30%] text-white border-none px-12 py-4 shadow-lg rounded-full text-lg  submitBtn"
               >
                 Submit
