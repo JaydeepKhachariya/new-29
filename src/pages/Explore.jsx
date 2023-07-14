@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -12,6 +12,8 @@ import Picture4 from "../assets/images/Picture4.png";
 import Picture5 from "../assets/images/Picture5.png";
 
 const Explore = () => {
+  const [bgColor, setBgColor] = useState(1);
+
   const arr = [
     {
       id: 1,
@@ -110,112 +112,145 @@ const Explore = () => {
     },
   ];
 
+  const handleSlideChange = (swiper) => {
+    const activeIndex = swiper.realIndex + 1;
+    switch (activeIndex) {
+      case 1:
+        setBgColor("red");
+        console.log("bg-color");
+        break;
+      case 2:
+        setBgColor("orange");
+        console.log("bg-color");
+        break;
+      case 3:
+        setBgColor("yellow");
+        console.log("bg-color");
+        break;
+      case 4:
+        setBgColor("green");
+        console.log("bg-color");
+        break;
+      case 5:
+        setBgColor("blue");
+        console.log("bg-color");
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const changeColor = () => {};
+
   return (
     <div className="h-[100vh] bgCrousal px-28">
-      {/* <div className="h-[85vh] top-[3rem] relative"> */}
-      {/* <div className="flex h-[100%] w-[100%] justify-center items-center gap-64">
-          <div className="h-[50px] w-[50px] rounded-full bg-black"></div>
-          <div className="h-[500px] w-[500px] rounded-full bg-black"></div>
-          <div className="h-[50px] w-[50px] rounded-full bg-black"></div>
-        </div> */}
-      <Swiper
-        modules={[Navigation]}
-        navigation={true}
-        loop={true}
-        scrollbar={{ draggable: true }}
-        speed={600}
-        slidesPerView={1}
-        // effect={"fade"}
-        // modules={[EffectFade]}
-      >
-        {arr.map((el) => {
-          return (
-            <SwiperSlide key={el.id}>
-              <div className=" flex gap-[25px] items-center justify-between p-4 flex-col  h-[690px] w-[100%] ">
-                <p className="text-[80px] font-bold text-[#003564]">
-                  {el.title}
-                </p>
-                <img src={el.image} alt="" className="slideImageAnim" />
-                <div className="flex w-[100%] items-center justify-between">
-                  <ul>
-                    <li className="text-center">
-                      <p className="font-bold text-[22px] text-black">
-                        WATTAGE
-                      </p>
-                      <p className="text-[24px] text-gray-600 font-medium">
-                        {el.opation1A}
-                      </p>
-                    </li>
-                  </ul>
-                  <ul>
-                    <li className="text-center">
-                      {" "}
-                      <p className="font-bold text-[22px] text-black">
-                        Temperature
-                      </p>
-                      <p className="text-[24px] text-gray-600 font-medium">
-                        {el.opation2A}
-                      </p>
-                    </li>
-                  </ul>
-                  <ul>
-                    <li className="text-center">
-                      {" "}
-                      <p className="font-bold text-[22px] text-black">CRI</p>
-                      <p className="text-[24px] text-gray-600 font-medium">
-                        {el.opation3A}
-                      </p>
-                    </li>
-                  </ul>
-                  <ul>
-                    <li className="text-center">
-                      {" "}
-                      <p className="font-bold text-[22px] text-black">TLCI</p>
-                      <p className="text-[24px] text-gray-600 font-medium">
-                        {el.opation4A}
-                      </p>
-                    </li>
-                  </ul>
-                  <ul>
-                    <li className="text-center">
-                      {" "}
-                      <p className="font-bold text-[22px] text-black">
-                        Dimming
-                      </p>
-                      <p className="text-[24px] text-gray-600 font-medium">
-                        {el.opation5A}
-                      </p>
-                    </li>
-                  </ul>
-                  <ul>
-                    <li className="text-center">
-                      {" "}
-                      <p className="font-bold text-[22px] text-black">
-                        Battery
-                      </p>
-                      <p className="text-[24px] text-gray-600 font-medium">
-                        {el.opation6A}
-                      </p>
-                    </li>
-                  </ul>
-                  <ul>
-                    <li className="text-center">
-                      {" "}
-                      <p className="font-bold text-[22px] text-black">
-                        Accessory Mount
-                      </p>
-                      <p className="text-[24px] text-gray-600 font-medium">
-                        {el.opation7A}
-                      </p>
-                    </li>
-                  </ul>
+      <div className="h-full top-0 relative">
+        <div className="flex h-[100%] w-[100%] justify-center items-center gap-64 absolute z-0">
+          {/* <div className="h-[50px] w-[50px] rounded-full bg-black"></div> */}
+          <div className={`h-[430px] w-[430px] rounded-full ${bgColor}`}></div>
+          {/* <div className="h-[50px] w-[50px] rounded-full bg-black"></div> */}
+        </div>
+        <Swiper
+          className=""
+          modules={[Navigation]}
+          navigation={true}
+          loop={true}
+          scrollbar={{ draggable: true }}
+          speed={600}
+          slidesPerView={1}
+          onSlideChange={handleSlideChange}
+          // effect={"fade"}
+          // modules={[EffectFade]}
+        >
+          {arr.map((el) => {
+            return (
+              <SwiperSlide key={el.id}>
+                <div className=" flex gap-[25px] items-center justify-between p-4 flex-col  h-[690px] w-[100%] ">
+                  <p className="text-[80px] font-bold text-[#003564]">
+                    {el.title}
+                  </p>
+                  <img src={el.image} alt="" className="slideImageAnim" />
+                  <div className="flex w-[100%] items-center justify-between">
+                    <ul>
+                      <li className="text-center">
+                        <p className="font-bold text-[22px] text-black">
+                          WATTAGE
+                        </p>
+                        <p className="text-[24px] text-gray-600 font-medium">
+                          {el.opation1A}
+                        </p>
+                      </li>
+                    </ul>
+                    <ul>
+                      <li className="text-center">
+                        {" "}
+                        <p className="font-bold text-[22px] text-black">
+                          Temperature
+                        </p>
+                        <p className="text-[24px] text-gray-600 font-medium">
+                          {el.opation2A}
+                        </p>
+                      </li>
+                    </ul>
+                    <ul>
+                      <li className="text-center">
+                        {" "}
+                        <p className="font-bold text-[22px] text-black">CRI</p>
+                        <p className="text-[24px] text-gray-600 font-medium">
+                          {el.opation3A}
+                        </p>
+                      </li>
+                    </ul>
+                    <ul>
+                      <li className="text-center">
+                        {" "}
+                        <p className="font-bold text-[22px] text-black">TLCI</p>
+                        <p className="text-[24px] text-gray-600 font-medium">
+                          {el.opation4A}
+                        </p>
+                      </li>
+                    </ul>
+                    <ul>
+                      <li className="text-center">
+                        {" "}
+                        <p className="font-bold text-[22px] text-black">
+                          Dimming
+                        </p>
+                        <p className="text-[24px] text-gray-600 font-medium">
+                          {el.opation5A}
+                        </p>
+                      </li>
+                    </ul>
+                    <ul>
+                      <li className="text-center">
+                        {" "}
+                        <p className="font-bold text-[22px] text-black">
+                          Battery
+                        </p>
+                        <p className="text-[24px] text-gray-600 font-medium">
+                          {el.opation6A}
+                        </p>
+                      </li>
+                    </ul>
+                    <ul>
+                      <li className="text-center">
+                        {" "}
+                        <p className="font-bold text-[22px] text-black">
+                          Accessory Mount
+                        </p>
+                        <p className="text-[24px] text-gray-600 font-medium">
+                          {el.opation7A}
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-      {/* </div> */}
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
     </div>
   );
 };

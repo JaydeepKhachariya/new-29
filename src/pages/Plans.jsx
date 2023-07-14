@@ -5,10 +5,11 @@ import beginner from "../assets/images/beginner.png";
 import expert from "../assets/images/expert.png";
 import Checkout from "../components/Checkout";
 import "animate.css";
+import CustomePlan from "../components/CustomePlan";
 
 const Plan = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isCheckout, setIsCheckout] = useState(true);
+  const [isCheckout, setIsCheckout] = useState(false);
 
   const [isClicked, setIsClicked] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(null);
@@ -20,6 +21,7 @@ const Plan = () => {
   const [chingariQuantity, setChingariQuantity] = useState(1);
   const [wabisabiQuantity, setWabisabiQuantity] = useState(1);
   const [workersQuantity, setWorkersQuantity] = useState(4);
+  const [customePlan, setCustomePlan] = useState(false);
 
   const plans = [
     {
@@ -70,7 +72,18 @@ const Plan = () => {
   return (
     <>
       <div className="bgCrousal2 h-[100vh] px-28">
-        <div className="h-[100%] top-0 relative">
+        <div className="h-[100%] top-0 relative flex flex-col">
+          {isSelected === undefined ? (
+            <div className="flex items-center mt-5 justify-end">
+              <button
+                onClick={() => setCustomePlan(true)}
+                className="bg-yellow-400 p-2 rounded-md font-semibold w-auto"
+              >
+                Make your custome plan
+              </button>
+            </div>
+          ) : null}
+
           {isSelected == undefined ? (
             <div className="flex items-center justify-around  h-[100%]">
               {plans.map((el) => {
@@ -438,6 +451,7 @@ const Plan = () => {
         </div>
       ) : null}
       {/* </div> */}
+      {customePlan ? <CustomePlan setCustomePlan={setCustomePlan} /> : null}
       {isCheckout ? <Checkout setIsCheckout={setIsCheckout} /> : null}
     </>
   );
